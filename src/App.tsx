@@ -1,13 +1,23 @@
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom'
 
-import {Button} from 'antd-mobile'
+import routes,{RouteType} from './config/routes'
 
 
-function App() {
+export default function App() {
   return (
-    <div className='qwe'>
-      <Button type='primary'>按钮</Button>
-    </div>
+    <Router>
+      <Switch>
+        {routes.map((route:RouteType,index)=>{
+          return <Route {...route} key={index} exact />
+        })}
+        <Redirect to="/phoneLogin" />
+      </Switch>
+    </Router>
   );
 }
 
-export default App;
