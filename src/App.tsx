@@ -4,7 +4,7 @@ import {Button} from 'antd-mobile'
 
 function App() {
   return (
-    <div>
+    <div className='qwe'>
       <Button type='primary'>按钮</Button>
     </div>
   );
